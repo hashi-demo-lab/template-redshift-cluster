@@ -7,7 +7,7 @@ data "tfe_outputs" "domain" {
 
 module "redshift_cluster" {
   source  = "app.terraform.io/tfc-demo-au/redshift-cluster/aws"
-  version = "~>  0.1.0"
+  version = "~>  0.3.0"
 
   datazone_domain_id          = coalesce(var.datazone_domain_id, data.tfe_outputs.domain.values.datazone_domain_id)
   datazone_project_id         = coalesce(var.datazone_project_id, data.tfe_outputs.domain.values.environment_project_id)
